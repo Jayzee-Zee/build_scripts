@@ -14,4 +14,4 @@ export XDROID_MAINTAINER=Jayzee-Zee
 source build/envsetup.sh
  
 # Build the ROM
-breakfast xdroid_earth userdebug && make xd -j$(nproc --all)
+lunch xdroid_earth-ap2a-user && make xd -j$(nproc --all)
