@@ -10,7 +10,7 @@ export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
-export XDROID_MAINTAINER=Jayzee-Zee 
+#export XDROID_MAINTAINER=Jayzee-Zee 
 source build/envsetup.sh
  
 # Build the ROM
