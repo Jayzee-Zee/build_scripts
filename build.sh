@@ -15,4 +15,4 @@ source build/envsetup.sh
  
 # Build the ROM
 brunch xdroid_earth userdebug
-lunch xdroid_earth-ap2a-userdebug && make xd -j$(nproc --all)
+lunch xdroid_earth-ap2a userdebug && make xd -j$(nproc --all)
