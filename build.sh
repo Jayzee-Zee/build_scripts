@@ -14,4 +14,4 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch xdroid_earth-ap2a userdebug && make xd -j$(nproc --all)
+lunch xdroid_earth-ap2a-userdebug && make xd -j$(nproc --all)
