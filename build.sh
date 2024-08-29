@@ -1,6 +1,7 @@
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
 repo init -u https://github.com/xdroid-oss/xd_manifest.git -b fourteen --git-lfs --depth=1
 #clone dev tree
+git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr.git device/mediatek/sepolicy_vndr
 git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b Xdroid .repo/local_manifests &&
 # Sync the repositories
 /opt/crave/resync.sh  && 
