@@ -14,4 +14,10 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch xdroid_earth-userdebug && make xd -j$(nproc --all)
+lunch xdroid_earth-userdebug
+brunch xdroid_earth userdebug
+breakfast xdroid_earth userdebug
+
+
+#build
+make xd -j$(nproc --all)
