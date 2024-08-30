@@ -1,4 +1,11 @@
 rm -rf out/target/product/earth/*
+rm -rf device/xiaomi/earth
+rm -rf vendor/xiaomi/earth
+rm -rf device/mediatek/sepolicy_vndr
+rm -rf kernel/xiaomi/earth
+rm -rf hardware/xiaomi
+rm -rf hardware/mediatek
+rm -rf frameworks/base
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
 repo init -u https://github.com/The-Pixel-Project/manifest.git -b fourteen-qpr3 --git-lfs --depth=1
 #clone dev tree
