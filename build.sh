@@ -1,6 +1,6 @@
 rm -rf out/target/product/earth/*
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/RisingTechOSS/android.git -b fourteen --git-lfs --depth=1
+repo init -u https://github.com/The-Pixel-Project/manifest.git -b fourteen-qpr3 --git-lfs --depth=1
 #clone dev tree
 git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b PixelProject .repo/local_manifests &&
 # Sync the repositories
