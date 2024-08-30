@@ -18,6 +18,7 @@ source build/envsetup.sh
  
 # Build the ROM
 chmod +x vendor/lineage/config/common_full_phone.mk
+chmod +x vendor/lineage/config/*
 lunch lineage_earth-userdebug
 
 #lunch lineage_earth-ap2a
