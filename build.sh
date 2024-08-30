@@ -15,8 +15,8 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch lineage_earth-user 
+lunch aosp_earth-userdebug
 #lunch lineage_earth-ap2a
 
 #beelding
-m bacon 
+make bacon -j$(nproc --all)
