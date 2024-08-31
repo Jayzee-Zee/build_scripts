@@ -27,6 +27,11 @@ export TZ=Asia/Jakarta
 export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
+
+lunch lineage_earth-user
+lunch lineage_earth-ap2a-user
+
+m bacon
  
 # beelding
 ./rom-build.sh earth
