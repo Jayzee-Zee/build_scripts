@@ -28,8 +28,8 @@ export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
-lunch lineage_earth-user
-lunch lineage_earth-ap2a-user
+lunch lineage_earth-userdebug
+lunch lineage_earth-ap2a-userdebug
 
 m bacon
  
