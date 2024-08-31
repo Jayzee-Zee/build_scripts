@@ -11,11 +11,9 @@ export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
-export RISING_MAINTAINER=Jayzee-Zee
+export KBUILD_USERNAME=Jayzee-Zee
+export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
  
-# Build the ROM
- riseup earth user
-
-#beelding
-rise b
+# beelding
+./rom-build.sh earth
