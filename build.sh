@@ -7,7 +7,7 @@ rm -rf hardware/xiaomi
 rm -rf hardware/mediatek
 rm -rf frameworks/base
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/AOSPA/manifest.git -b fourteen-qpr3 --git-lfs --depth=1
+repo init -u https://github.com/AOSPA/manifest.git -b uvite --git-lfs --depth=1
 #clone dev tree
 git clone https://github.com/Jayzee-Zee/android_device_xiaomi_earth -b AOSPA device/xiaomi/earth 
 git clone https://github.com/mt6768-dev/proprietary_vendor_xiaomi_earth -b lineage-21 vendor/xiaomi/earth
@@ -15,7 +15,7 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b 
 git clone https://github.com/Jayzee-Zee/android_kernel_xiaomi_earth -b nonksu kernel/xiaomi/earth
 git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
 git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
-git clone https://github.com/AOSPA/android_frameworks_base -b fourteen-qpr3 frameworks/base
+git clone https://github.com/AOSPA/android_frameworks_base -b uvite frameworks/base
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
