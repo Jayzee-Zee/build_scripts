@@ -15,7 +15,7 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b 
 git clone https://github.com/Jayzee-Zee/android_kernel_xiaomi_earth -b nonksu kernel/xiaomi/earth
 git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
 git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
-git clone https://github.com/AOSPA/frameworks_base -b fourteen-qpr3 frameworks/base
+git clone https://github.com/AOSPA/android_frameworks_base -b fourteen-qpr3 frameworks/base
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
