@@ -19,6 +19,8 @@ git clone https://github.com/AOSPA/android_frameworks_base -b uvite frameworks/b
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
+chmod +x vendor/lineage/config/*mk
+chmod +x vendor/lineage/*
 export BUILD_USERNAME=Jayzee-Zee 
 export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
@@ -28,10 +30,11 @@ export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
-lunch lineage_earth-userdebug
-lunch lineage_earth-ap2a-userdebug
+lunch aospa_earth-ap2a-userdebug
+lunch aospa_earth-userdebug
+
 
 m bacon
  
 # beelding
-./rom-build.sh earth
+
