@@ -33,7 +33,7 @@ export KBUILD_USERNAME=Jayzee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
-lunch cipher_earth-ap2a-userdebug
+lunch cipher_earth-ap1a-userdebug
 lunch cipher_earth-userdebug
 
 
