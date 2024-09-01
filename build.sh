@@ -21,7 +21,10 @@ git clone https://github.com/AOSPA/android_frameworks_base -b uvite frameworks/b
 # Set up build environment
 chmod +x vendor/lineage/config/*mk
 chmod +x vendor/lineage/*
-export BUILD_USERNAME=Jayzee-Zee 
+export BUILD_USERNAME=Jayzee-Zee
+export TARGET_PRODUCT=aospa_earth
+export TARGET_BUILD_VARIANT=userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=1
 export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_RELEASE=ap2a
