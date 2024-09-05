@@ -20,6 +20,8 @@ source build/envsetup.sh
 
 breakfast earth userdebug
 
+echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
+
 m bacon
  
 # beelding
