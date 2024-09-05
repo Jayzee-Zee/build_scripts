@@ -2,7 +2,7 @@ rm -rf out/target/product/earth/*.zip
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
 repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen-qpr --git-lfs --depth=1
 #clone dev tree
-git 
+git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b CipherOS .repo/local_manifests &&
 # Sync the repositories
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)  && 
 # Set up build environment
