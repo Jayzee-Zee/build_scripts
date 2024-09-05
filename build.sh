@@ -6,6 +6,7 @@ git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b AOSPA .repo/
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
+source build/envsetup.sh
 export BUILD_USERNAME=Jayzee-Zee
 export TARGET_PRODUCT=aospa_earth
 export TARGET_BUILD_VARIANT=userdebug
@@ -16,7 +17,6 @@ export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
 export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
-source build/envsetup.sh
 
 lunch aospa_earth-userdebug
 
@@ -24,7 +24,9 @@ lunch aospa_earth-userdebug
 
 ./rom-build.sh earth
 
+sleep 5m
 
+curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/AOSPA/build.sh | bash
 
  
 # beelding
