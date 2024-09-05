@@ -21,7 +21,11 @@ source build/envsetup.sh
 lunch aospa_earth-userdebug
 
 
-m bacon
+
+./rom-build.sh earth
+
+
+
  
 # beelding
 
