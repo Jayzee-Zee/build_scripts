@@ -14,7 +14,7 @@ export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
-export KBUILD_USERNAME=Jayzee
+export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
