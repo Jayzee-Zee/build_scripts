@@ -24,7 +24,7 @@ lunch aospa_earth-userdebug
 
 ./rom-build.sh earth
 
-sleep 5m
+sleep 10m
 
 curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/AOSPA/build.sh | bash
 
