@@ -10,13 +10,14 @@ git clone https://github.com/akhilnarang/scripts
 cd scripts
 ./setup/android_build_env.sh
 cd ~/
-mkdir -p ~/bin
-mkdir -p ~/android
+sudo mkdir -p ~/bin
+sudo mkdir -p ~/android
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 git config --global user.email "salitagwapo@gmail.com"
 git config --global user.name "Jayzee"
-mkdir /android
+pkg upgrade
+sudo mkdir /android
 cd /android
 rm -rf out/target/product/earth/*.zip
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
