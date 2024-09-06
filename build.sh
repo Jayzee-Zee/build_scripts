@@ -16,6 +16,7 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 git config --global user.email "salitagwapo@gmail.com"
 git config --global user.name "Jayzee"
+mkdir /android
 cd /android
 rm -rf out/target/product/earth/*.zip
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
