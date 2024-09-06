@@ -21,5 +21,9 @@ breakfast earth userdebug
 echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
 
 m bacon
+
+ sleep 10m
+
  
 
+curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/CipherOS/build.sh | bash
