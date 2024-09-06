@@ -1,3 +1,21 @@
+cd ~/
+wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+# add Android SDK platform tools to path
+if [ -d "$HOME/platform-tools" ] ; then
+    PATH="$HOME/platform-tools:$PATH"
+fi
+source ~/.profile
+cd ~/
+git clone https://github.com/akhilnarang/scripts
+cd scripts
+./setup/android_build_env.sh
+cd ~/
+mkdir -p ~/bin
+mkdir -p ~/android
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+git config --global user.email "salitagwapo@gmail.com"
+git config --global user.name "Jayzee"
 cd /android
 rm -rf out/target/product/earth/*.zip
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
