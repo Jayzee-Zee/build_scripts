@@ -17,13 +17,14 @@ export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
 lunch cipher_earth-ap1a-userdebug
+lunch cipher_earth-ap2a-userdebug
 
 echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
 
 m bacon
 
- sleep 10m
+# sleep 10m
 
  
 
-curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/CipherOS/build.sh | bash
+#curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/CipherOS/build.sh | bash
