@@ -16,7 +16,7 @@ export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
-breakfast earth userdebug
+lunch cipher_earth-ap2a-userdebug
 
 echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
 
