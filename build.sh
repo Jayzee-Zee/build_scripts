@@ -18,11 +18,13 @@ export TZ=Asia/Jakarta
 export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 
-lunch aospa_earth-userdebug
+lunch aospa_earth-ap2a-userdebug
 
 
+mka bacom
 
-./rom-build.sh earth
+
+#./rom-build.sh earth
 
 sleep 10m
 
