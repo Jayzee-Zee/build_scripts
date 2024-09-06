@@ -28,7 +28,7 @@ mka bacon
 
 sleep 10m
 
-curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/AOSPA/build.sh | bash
+#curl https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/AOSPA/build.sh | bash
 
  
 # beelding
