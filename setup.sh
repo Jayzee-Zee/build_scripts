@@ -1,5 +1,7 @@
-sudo passwd root && 1 && 1
-su && 1 && 1
+sudo passwd root && 1
+1
+su && 1
+1
 cd $HOME
 mkdir $HOME/build
 cd $HOME/build
@@ -8,6 +10,7 @@ sudo apt-get install repo git
 sudo apt-get install openjdk-8-jdk
 sudo apt-get install openjdk-8-jre
 sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip schedtool
+sudo apt-get upgrade
 cd $HOME/build
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 # add Android SDK platform tools to path
