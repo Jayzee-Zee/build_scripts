@@ -5,8 +5,8 @@ repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen-qpr --
 #clone dev tree
 git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b CipherOS .repo/local_manifests &&
 # Sync the repositories
-#/opt/crave/resync.sh 
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) &&
+/opt/crave/resync.sh &&
+#repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 # Set up build environment
 export BUILD_USERNAME=Jayzee-Zee
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=1
