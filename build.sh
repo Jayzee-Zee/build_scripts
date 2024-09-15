@@ -1,5 +1,10 @@
 rm -rf out/target/product/earth/*
 rm -rf hardware/xiaomi
+rm -rf device/xiaomi/earth
+rm -rf device/mediatek/sepolicy_vndr
+rm -rf vendor/xiaomi/earth
+rm -rf kernel/xiaomi/earth
+rm -rf hardware/mediatek
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
 repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-14.0 --git-lfs --depth=1
 #clone dev tree
