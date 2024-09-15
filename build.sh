@@ -22,8 +22,8 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch lineage_earth-ap2a-userdebug
-
+lunch arrow_earth-userdebug
+lunch arrow_earth-ap2a-userdebug
 #beelding
 
 make bacon
