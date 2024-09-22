@@ -16,6 +16,7 @@ git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 h
 # Set up build environment
 export BUILD_USERNAME=Jayzee-Zee 
 export BUILD_HOSTNAME=crave
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
