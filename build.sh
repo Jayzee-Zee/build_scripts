@@ -23,7 +23,7 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch blaze_earth-ap2a-userdebug
+lunch blaze_earth-ap2a-userdebug || lunch blaze_earth-userdebug || lunch lineage_earth-ap2a-userdebug || lunch lineage_earth-userdebug
 
 #beelding
 
