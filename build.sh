@@ -27,8 +27,8 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-chmod +x vendor/lineage/config/common_full_phone.mk
-chmod +x vendor/lineage/config/*
+chmod +x vendor/aosp/config/common_full_phone.mk
+chmod +x vendor/aosp/config/*
 lunch lineage_earth-userdebug || lunch lineage_earth-ap2a-userdebug
 
 #beelding
