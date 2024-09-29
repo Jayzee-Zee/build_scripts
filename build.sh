@@ -29,7 +29,7 @@ source build/envsetup.sh
 # Build the ROM
 chmod 777 vendor/aosp/config/common_full_phone.mk
 chmod 777 vendor/aosp/config/*.mk
-lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug
+lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug || breakfast earth userdebug
 
 #beelding
 make bacon -j$(nproc --all)
