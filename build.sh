@@ -27,9 +27,9 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-chmod +x vendor/aosp/config/common_full_phone.mk
-chmod +x vendor/aosp/config/*
-lunch lineage_earth-userdebug || lunch lineage_earth-ap2a-userdebug
+chmod 777 vendor/aosp/config/common_full_phone.mk
+chmod 777 vendor/aosp/config/*.mk
+lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug
 
 #beelding
 make bacon -j$(nproc --all)
