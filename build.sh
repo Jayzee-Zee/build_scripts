@@ -13,13 +13,13 @@ git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 h
 # Sync the repositories
 /opt/crave/resync.sh &&
 # Set up build environment
-source build/envsetup.sh
 export BUILD_USERNAME=Jayzee-Zee
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=1
 export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
 export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
+source build/envsetup.sh || sudo bash build/envsetup.sh
 sudo chmod +x vendor/cipher/config/common_full_phone.mk
 sudo chmod 777 vendor/cipher/config/common_full_phone.mk
 lunch cipher_earth-userdebug || lunch cipher_earth-ap1a-userdebug || lunch cipher_earth-ap2a-userdebug || breakfast earth userdebug || brunch earth userdebug
