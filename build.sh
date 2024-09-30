@@ -15,12 +15,11 @@ export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
 source build/envsetup.sh
 
-lunch cipher_earth-ap1a-userdebug
-lunch cipher_earth-ap2a-userdebug
+lunch cipher_earth-userdebug || lunch cipher_earth-ap1a-userdebug || lunch cipher_earth-ap2a-userdebug || breakfast earth userdebug || brunch earth userdebug
 
 echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
 
-m bacon
+make bacon
 
 # sleep 10m
 
