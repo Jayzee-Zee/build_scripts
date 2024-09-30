@@ -14,7 +14,8 @@ export BUILD_HOSTNAME=crave
 export TZ=Asia/Jakarta
 export KBUILD_USERNAME=Jayzee-Zee
 export KBUILD_HOSTNAME=crave
-chmod +x vendor/cipher/config/common_full_phone.mk
+sudo chmod +x vendor/cipher/config/common_full_phone.mk
+sudo chmod 777 vendor/cipher/config/common_full_phone.mk
 lunch cipher_earth-userdebug || lunch cipher_earth-ap1a-userdebug || lunch cipher_earth-ap2a-userdebug || breakfast earth userdebug || brunch earth userdebug
 
 echo "Im crave sir I will start beelding now Just hope it doesn't fail lol"
