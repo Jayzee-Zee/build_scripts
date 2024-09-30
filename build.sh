@@ -4,15 +4,6 @@ rm -rf .repo/local_manifests/  && # Clone local_manifests repository
 repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen-qpr --git-lfs --depth=1
 #clone dev tree
 #git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b CipherOS .repo/local_manifests
-nged
-build.sh
-+2
--10
-Original file line number	Diff line number	Diff line change
-rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen-qpr --git-lfs --depth=1
-#clone dev tree
-#git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b CipherOS .repo/local_manifests
 git clone https://github.com/Jayzee-Zee/android_device_xiaomi_earth -b CipherOS device/xiaomi/earth 
 git clone https://github.com/mt6768-dev/proprietary_vendor_xiaomi_earth -b lineage-21 vendor/xiaomi/earth
 git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b lineage-21 device/mediatek/sepolicy_vndr
