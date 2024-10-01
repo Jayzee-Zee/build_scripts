@@ -25,6 +25,10 @@ export BUILD_BROKEN_MISSING_REQUIRED_MODULES=1
 export TZ=Asia/Jakarta
 #export RISING_MAINTAINER=Jayzee
 source build/envsetup.sh || sudo bash build/envsetup.sh
+
+git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b lineage-21 device/mediatek/sepolicy_vndr
+git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
+git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
  
 # Build the ROM
 chmod 777 vendor/aosp/config/common_full_phone.mk
