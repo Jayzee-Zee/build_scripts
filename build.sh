@@ -35,6 +35,10 @@ export TZ=Asia/Jakarta
 #export RISING_MAINTAINER=Jayzee
 source build/envsetup.sh || sudo bash build/envsetup.sh
 
+rm -rf hardware/xiaomi
+rm -rf hardware/mediatek
+rm -rf device/mediatek/sepolicy_vndr
+
 git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b lineage-21 device/mediatek/sepolicy_vndr
 git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
 git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
