@@ -19,6 +19,12 @@ git clone https://github.com/The-Pixel-Project/frameworks_base -b fourteen-qpr3 
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
+
+CUSTOMCLANG="azure"
+sudo rm -rf "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
+sudo git clone https://gitlab.com/Panchajanya1999/azure-clang --depth=1 -b main prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}
+
+
 export BUILD_USERNAME=Jayzee-Zee 
 export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
