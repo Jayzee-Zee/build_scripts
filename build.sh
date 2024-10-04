@@ -44,9 +44,9 @@ git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 har
 git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
  
 # Build the ROM
-chmod 777 vendor/aosp/config/common_full_phone.mk
-chmod 777 vendor/aosp/config/*.mk
+sudo chmod 777 vendor/aosp/config/common_full_phone.mk
+sudo chmod 777 vendor/aosp/config/*.mk
 lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug || breakfast earth userdebug
-
+sudo chmod 777 out/target/product/earth/obj/ETC/file_contexts.bin_intermediates/file_contexts.device.tmp
 #beelding
 make bacon -j$(nproc --all)
