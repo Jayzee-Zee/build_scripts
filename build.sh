@@ -46,7 +46,7 @@ git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 h
 # Build the ROM
 sudo chmod 777 vendor/aosp/config/common_full_phone.mk
 sudo chmod 777 vendor/aosp/config/*.mk
-lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug || breakfast earth userdebug
+lunch aosp_earth-userdebug || lunch aosp_earth-ap2a-userdebug || breakfast earth userdebug || make bacon -j$(nproc --all)
 sudo chmod 777 out/target/product/earth/obj/ETC/file_contexts.bin_intermediates/file_contexts.device.tmp
 #beelding
-make bacon -j$(nproc --all)
+#make bacon -j$(nproc --all)
