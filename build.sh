@@ -20,9 +20,9 @@ git clone https://github.com/The-Pixel-Project/frameworks_base -b fourteen-qpr3 
 /opt/crave/resync.sh  && 
 # Set up build environment
 
-CUSTOMCLANG="azure"
-sudo rm -rf "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
-sudo git clone https://gitlab.com/Panchajanya1999/azure-clang --depth=1 -b main prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}
+#CUSTOMCLANG="azure"
+#sudo rm -rf "prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}"
+#sudo git clone https://gitlab.com/Panchajanya1999/azure-clang --depth=1 -b main prebuilts/clang/host/linux-x86/clang-${CUSTOMCLANG}
 
 source build/envsetup.sh || sudo bash build/envsetup.sh
 
@@ -30,7 +30,7 @@ export BUILD_USERNAME=Jayzee-Zee
 export BUILD_HOSTNAME=crave
 #export TARGET_PRODUCT=lineage_earth
 #export TARGET_BUILD_VARIANT=userdebug
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 #export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
 #export RISING_MAINTAINER=Jayzee
