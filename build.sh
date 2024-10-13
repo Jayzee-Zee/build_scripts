@@ -13,7 +13,7 @@ git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 h
 # Sync the repositories
 /opt/crave/resync.sh &&
 # Set up build environment
-source build/envsetup.sh || sudo bash build/envsetup.sh
+#source build/envsetup.sh || sudo bash build/envsetup.sh
 rm -rf device/xiaomi/earth
 rm -rf vendor/xiaomi/earth
 rm -rf device/mediatek/sepolicy_vndr
@@ -26,6 +26,7 @@ git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b 
 git clone https://github.com/Jayzee-Zee/android_kernel_xiaomi_earth -b nonksu kernel/xiaomi/earth
 git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
 git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek
+. build/envsetup.sh || source bash build/envsetup.sh
 export BUILD_USERNAME=Jayzee-Zee
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_HOSTNAME=crave
