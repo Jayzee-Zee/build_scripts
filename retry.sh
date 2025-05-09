@@ -6,8 +6,8 @@ export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TARGET_RELEASE=ap2a
 export TZ=Asia/Jakarta
 # Boot animation performance tweak
-export TARGET_BOOT_ANIMATION_RES := 720
-export TARGET_BOOT_ANIMATION_PRELOAD := false
+export TARGET_BOOT_ANIMATION_RES=720
+export TARGET_BOOT_ANIMATION_PRELOAD=false
 
 source build/envsetup.sh
 
