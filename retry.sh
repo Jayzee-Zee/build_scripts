@@ -1,5 +1,4 @@
 #!/bin/bash
-exit 0
 set -e
 export BUILD_USERNAME=Jayzee-Zee 
 export BUILD_HOSTNAME=crave
