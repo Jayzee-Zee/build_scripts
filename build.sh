@@ -1,30 +1,54 @@
-rm -rf out/target/product/earth/*
-rm -rf hardware/xiaomi
-rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init  -u https://github.com/ProjectBlaze/manifest -b 14 --depth=1
-#clone dev tree
-git clone https://github.com/Jayzee-Zee/Local-Manifest --depth 1 -b Blaze .repo/local_manifests &&
-# Sync the 
-#repositories
-#git clone https://github.com/Jayzee-Zee/android_device_xiaomi_earth -b Blaze device/xiaomi/earth 
-#git clone https://github.com/mt6768-dev/proprietary_vendor_xiaomi_earth -b lineage-21 vendor/xiaomi/earth
-#git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr -b lineage-21 device/mediatek/sepolicy_vndr
-#git clone https://github.com/Jayzee-Zee/android_kernel_xiaomi_earth -b nonksu kernel/xiaomi/earth
-#git clone https://github.com/LineageOS/android_hardware_xiaomi -b lineage-21 hardware/xiaomi
-#git clone https://github.com/LineageOS/android_hardware_mediatek -b lineage-21 hardware/mediatek &&
-/opt/crave/resync.sh  && 
-# Set up build environment
-export BUILD_USERNAME=Jayzee-Zee 
-export BUILD_HOSTNAME=crave
+#!/usr/bin/env bash
+
+# CONFIGURATION
+DEVICE=earth
+ROM=blaze
+RELEASE=ap2a
+MANIFEST_URL="https://github.com/ProjectBlaze/manifest"
+MANIFEST_BRANCH="14"
+LOCAL_MANIFEST_URL="https://github.com/Jayzee-Zee/Local-Manifest"
+LOCAL_MANIFEST_BRANCH="Blaze"
+
+LUNCH_TARGETS=(
+  blaze_${DEVICE}-${RELEASE}-userdebug
+  blaze_${DEVICE}-userdebug
+  lineage_${DEVICE}-${RELEASE}-userdebug
+  lineage_${DEVICE}-userdebug
+)
+
+export BUILD_USERNAME="Jayzee-Zee"
+export BUILD_HOSTNAME="crave"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-#export TARGET_PRODUCT=lineage_earth
-export TARGET_RELEASE=ap2a
-export TZ=Asia/Jakarta
+export TZ="Asia/Jakarta"
+JOBS=$(nproc)
+
+# CLEAN
+rm -rf out/target/product/$DEVICE/*
+rm -rf hardware/xiaomi
+rm -rf .repo/local_manifests
+
+# INIT & LOCAL_MANIFEST
+repo init -u "$MANIFEST_URL" -b "$MANIFEST_BRANCH" --depth=1
+git clone --depth 1 -b "$LOCAL_MANIFEST_BRANCH" "$LOCAL_MANIFEST_URL" .repo/local_manifests
+
+# RESYNC (Crave's fast method)
+bash /opt/crave/resync.sh
+
+# ENVIRONMENT SETUP
 source build/envsetup.sh
- 
-# Build the ROM
-lunch blaze_earth-ap2a-userdebug || lunch blaze_earth-userdebug || lunch lineage_earth-ap2a-userdebug || lunch lineage_earth-userdebug
 
-#beelding
+# TRY LUNCH TARGETS
+success=0
+for target in "${LUNCH_TARGETS[@]}"; do
+    echo "[*] Trying lunch target: $target"
+    lunch "$target" && success=1 && break
+    echo "[!] Failed: $target. Trying next..."
+done
 
-make bacon
+if [ "$success" -ne 1 ]; then
+    echo "[x] ERROR: All lunch targets failed!"
+    exit 1
+fi
+
+# START BUILD
+make bacon -j"$JOBS"
