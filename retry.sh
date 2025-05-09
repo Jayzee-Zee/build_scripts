@@ -9,10 +9,11 @@ export TZ=Asia/Jakarta
 export TARGET_BOOT_ANIMATION_RES=720
 export TARGET_BOOT_ANIMATION_PRELOAD=false
 export TARGET_PRODUCT=blaze_earth
+#export PRODUCT_NAME=blaze_earth
 source build/envsetup.sh
 
 # Try all lunch targets
-for target in blaze_earth-ap2a-userdebug blaze_earth-userdebug lineage_earth-ap2a-userdebug lineage_earth-userdebug; do
+for target in blaze_earth-ap2a-userdebug blaze_earth-userdebug lineage_earth-ap2a-userdebug lineage_earth-userdebug ; do
     if lunch "$target"; then
         echo "[+] Using $target"
         break
