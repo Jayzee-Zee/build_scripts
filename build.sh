@@ -1,54 +1,53 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# CONFIGURATION
-DEVICE=earth
-ROM=blaze
-RELEASE=ap2a
-MANIFEST_URL="https://github.com/ProjectBlaze/manifest"
-MANIFEST_BRANCH="14"
-LOCAL_MANIFEST_URL="https://github.com/Jayzee-Zee/Local-Manifest"
-LOCAL_MANIFEST_BRANCH="Blaze"
-
-LUNCH_TARGETS=(
-  blaze_${DEVICE}-${RELEASE}-userdebug
-  blaze_${DEVICE}-userdebug
-  lineage_${DEVICE}-${RELEASE}-userdebug
-  lineage_${DEVICE}-userdebug
-)
-
-export BUILD_USERNAME="Jayzee-Zee"
-export BUILD_HOSTNAME="crave"
+set -e
+export BUILD_USERNAME=Jayzee-Zee
+export BUILD_HOSTNAME=crave
+export TZ=Asia/Jakarta
+export RISING_MAINTAINER=Jayzee-Zee
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export TZ="Asia/Jakarta"
-JOBS=$(nproc)
 
-# CLEAN
-rm -rf out/target/product/$DEVICE/*
-rm -rf hardware/xiaomi
-rm -rf .repo/local_manifests
+echo "[*] Initializing repo..."
+repo init -u https://github.com/ProjectBlaze/manifest.git -b 14 --depth=1
 
-# INIT & LOCAL_MANIFEST
-repo init -u "$MANIFEST_URL" -b "$MANIFEST_BRANCH" --depth=1
-git clone --depth 1 -b "$LOCAL_MANIFEST_BRANCH" "$LOCAL_MANIFEST_URL" .repo/local_manifests
+echo "[*] Cloning local manifest..."
+git clone --depth=1 -b Blaze https://github.com/Jayzee-Zee/Local-Manifest .repo/local_manifests
 
-# RESYNC (Crave's fast method)
-bash /opt/crave/resync.sh
+echo "[*] Syncing sources..."
+/opt/crave/resync.sh
 
-# ENVIRONMENT SETUP
+echo "[*] Setting up environment..."
 source build/envsetup.sh
 
-# TRY LUNCH TARGETS
-success=0
-for target in "${LUNCH_TARGETS[@]}"; do
-    echo "[*] Trying lunch target: $target"
-    lunch "$target" && success=1 && break
-    echo "[!] Failed: $target. Trying next..."
+# Try lunch targets one by one
+echo "[*] Selecting lunch target..."
+for target in blaze_earth-ap2a-userdebug blaze_earth-userdebug lineage_earth-ap2a-userdebug lineage_earth-userdebug; do
+    if lunch "$target"; then
+        echo "[+] Using $target"
+        break
+    fi
 done
 
-if [ "$success" -ne 1 ]; then
-    echo "[x] ERROR: All lunch targets failed!"
-    exit 1
-fi
+# Start the build
+echo "[*] Starting build..."
+if ! make bacon -j$(nproc); then
+    echo "[!] Build failed. Waiting 10 minutes before checking for remote patch script..."
+    sleep 600  # 10 minutes
 
-# START BUILD
-make bacon -j"$JOBS"
+    REMOTE_SCRIPT_URL="https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/refs/heads/Blaze/retry.sh"
+
+    while true; do
+        echo "[*] Checking for remote script..."
+        curl -fsSL "$REMOTE_SCRIPT_URL" -o /tmp/remote_patch.sh || true
+        if [ -s /tmp/remote_patch.sh ]; then
+            echo "[*] Executing remote patch script..."
+            chmod +x /tmp/remote_patch.sh
+            bash /tmp/remote_patch.sh || echo "[!] Remote patch script failed"
+        else
+            echo "[*] No patch script found, retrying in 30s..."
+        fi
+        sleep 30
+    done
+else
+    echo "[+] Build completed successfully."
+fi
