@@ -26,5 +26,5 @@ else
     sleep 600
     echo "[→] Fetching and running updated remote build script..."
 
-    curl -fsSL "https://raw.githubusercontent.com/YourUsername/YourRepo/main/build.sh" | bash
+    curl -fsSL "https://raw.githubusercontent.com/Jayzee-Zee/build_scripts/refs/heads/Blaze/retry.sh" | bash
 fi
