@@ -8,7 +8,7 @@ export TZ=Asia/Jakarta
 # Boot animation performance tweak
 export TARGET_BOOT_ANIMATION_RES=720
 export TARGET_BOOT_ANIMATION_PRELOAD=false
-
+export TARGET_PRODUCT=blaze_earth
 source build/envsetup.sh
 
 # Try all lunch targets
