@@ -11,7 +11,7 @@ rm -rf out/target/product/earth/*
 # Initialize repository
 echo "Initializing repository..."
 repo init -u https://github.com/ProjectMatrixx/android.git \
-    -b 15.0 \
+    -b 14.0 \
     --git-lfs \
     --depth=1
 
@@ -51,7 +51,7 @@ export TZ="Asia/Jakarta"
 #export SDCLANG=false  # turn off SDCLANG if used
 
 # Source build environment
-source build/envsetup.sh
+. build/envsetup.sh
 
 # Build ROM
 echo "Starting build process..."
