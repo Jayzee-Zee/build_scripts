@@ -1,8 +1,8 @@
 rm -rf out/target/product/earth/*
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u <linktotheromsmanifest> -b <branch> --git-lfs --depth=1
+repo init -u https://github.com/ProjectMatrixx/android.git -b 15.0 --git-lfs --depth=1
 #clone dev tree
-git clone <yourmanifest> --depth 1 -b <branch> .repo/local_manifests &&
+git clone https://github.com/Jayzee-Zee/Local-Manifest.git --depth 1 -b matrixx .repo/local_manifests &&
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
@@ -14,4 +14,4 @@ export TZ=Asia/Jakarta
 source build/envsetup.sh
  
 # Build the ROM
-lunch lineage_earth-ap2a-user && m bacon
+brunch earth
